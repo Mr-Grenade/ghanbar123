@@ -1,0 +1,790 @@
+@import "tailwindcss" source(none);
+@source "../src";
+
+/* Theme switching is driven by data-theme on <html> (set by AcademyContext). */
+@custom-variant dark (&:where([data-theme="dark"] *));
+
+@theme inline {
+  --color-canvas: var(--bg-primary);
+  --color-surface: var(--bg-secondary);
+  --color-surface-2: var(--bg-tertiary);
+  --color-line: var(--border-color);
+  --color-ink: var(--text-primary);
+  --color-ink-2: var(--text-secondary);
+  --color-ink-muted: var(--text-muted);
+  --color-accent: var(--accent-primary);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-light);
+  --color-accent-strong: var(--accent-text);
+  --color-accent-border: var(--accent-border);
+  --color-accent-fg: var(--accent-fg);
+  --color-on-solid: var(--on-solid);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-success-border: var(--success-border);
+  --color-success-strong: var(--success-strong);
+
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-border: var(--warning-border);
+  --color-warning-strong: var(--warning-strong);
+
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-border: var(--danger-border);
+  --color-danger-strong: var(--danger-strong);
+
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-info-border: var(--info-border);
+  --color-info-strong: var(--info-strong);
+
+  /* Extend border radius logic */
+  --radius-app: 1.25rem;
+
+  --color-header: var(--bg-header, var(--bg-primary));
+  --color-header-text: var(--text-header, var(--text-primary));
+  --color-header-border: var(--border-header, var(--border-color));
+
+  --color-sidebar: var(--bg-sidebar, var(--bg-secondary));
+  --color-sidebar-text: var(--text-sidebar, var(--text-primary));
+  --color-sidebar-border: var(--border-sidebar, var(--border-color));
+}
+
+/* ---------------- 1. Main Light Theme ---------------- */
+:root,
+[data-theme="light"] {
+  /* -----------------------------------------
+     Base & Neutrals (Cool/blue undertones)
+  ----------------------------------------- */
+  --bg-primary: #fffdf8;
+  --bg-secondary: #f8f7f0; /* Soft, slightly blue-tinted gray */
+  --bg-tertiary: #f0ede2; /* Deeper slate-gray */
+  --border-color: #dee1cb;
+  --shadow-tint: #0f172a; /* Tied to Navy for richer shadows */
+
+  /* -----------------------------------------
+     Typography: Navy Blue Focus
+  ----------------------------------------- */
+  --text-primary: #0f172a; /* Rich, Deep Navy */
+  --text-secondary: #334155; /* Medium Navy/Slate */
+  --text-muted: #64748b; /* Cool Slate Gray */
+
+  /* -----------------------------------------
+     Brand Primary: Blue
+  ----------------------------------------- */
+  --blue-primary: #2563eb; /* Vibrant, modern Royal Blue */
+  --blue-hover: #1d4ed8;
+  --blue-light: #eff6ff;
+  --blue-border: #bfdbfe;
+  --blue-text: #1e40af;
+
+  /* -----------------------------------------
+     Accent: Golden Yellow
+  ----------------------------------------- */
+  --accent-primary: #ffc82c; /* Warmer, golden yellow */
+  --accent-hover: #e5b427;
+  --accent-light: #fffbeb;
+  --accent-text: #b45309; /* Deep amber for text readability */
+  --accent-border: #fde584;
+  --accent-fg: #0f172a; /* Navy text on solid yellow backgrounds */
+  --on-solid: #ffffff; /* White text on solid blue/dark backgrounds */
+
+  /* -----------------------------------------
+     Semantic Colors (Harmonized)
+  ----------------------------------------- */
+  /* Success: Emerald (Cool green pairs better with Navy/Blue) */
+  --success: #10b981;
+  --success-soft: #ecfdf5;
+  --success-border: #a7f3d0;
+  --success-strong: #047857;
+
+  /* Warning: Deep Orange (Differentiated from your Yellow Accent) */
+  --warning: #f97316;
+  --warning-soft: #fdc7c7;
+  --warning-border: #fed7aa;
+  --warning-strong: #c2410c;
+
+  /* Danger: Crimson/Rose (Cooler red looks sophisticated with Navy) */
+  --danger: #e11d48;
+  --danger-soft: #fff1f2;
+  --danger-border: #fecdd3;
+  --danger-strong: #be123c;
+
+  /* Info: Light Ocean Blue (Differentiated from Brand Blue) */
+  --info: #0ea5e9;
+  --info-soft: #f0f9ff;
+  --info-border: #bae6fd;
+  --info-strong: #0369a1;
+
+  /* Header & Sidebar specific */
+  /* Header */
+  --bg-header: #fffdf8;
+  --text-header: #1e293b;
+  --border-header: #e2e8f0;
+
+  /* Sidebar */
+  --bg-sidebar: #0f172a;
+  --text-sidebar: #ffffff;
+  --border-sidebar: #1e293b;
+
+  /* Independent Clock Color */
+  --text-clock: #1e293b;
+  /*غیر موجه */
+  --color1: #b11f37;
+}
+
+/* ---------------- 2. Main Dark Theme ---------------- */
+[data-theme="dark"] {
+  --bg-primary: #121111;
+  --bg-secondary: #232323;
+  --bg-tertiary: #202024;
+  --text-primary: #e6f1ff;
+  --text-secondary: #8892b0;
+  --text-muted: #a8b2d1;
+  --border-color: #3b4c6b;
+  --shadow-tint: #000000;
+
+  /* Accent: Yellow */
+  --accent-primary: #ffc300;
+  --accent-hover: #ffd000;
+  --accent-light: #332700;
+  --accent-text: #ffe680;
+  --accent-border: #806200;
+  --accent-fg: #0a192f;
+  --on-solid: #0a192f;
+
+  /* Semantic */
+  --success: #34c08d;
+  --success-soft: #10281f;
+  --success-border: #1e5342;
+  --success-strong: #8ee6c3;
+
+  --warning: #f39c12;
+  --warning-soft: #2e1d03;
+  --warning-border: #7a4e09;
+  --warning-strong: #f9ce88;
+
+  --danger: #760031;
+  --danger-soft: #6d1927;
+  --danger-border: #a14854;
+  --danger-strong: #dbe8fa;
+
+  --info: #007bff;
+  --info-soft: #001833;
+  --info-border: #003d80;
+  --info-strong: #80bfff;
+
+  /* Header & Sidebar specific */
+  /* Header */
+  --bg-header: #121111;
+  --text-header: #f5f5f5;
+  --border-header: #0f172a;
+
+  /* Sidebar */
+  --bg-sidebar: #242424;
+  --text-sidebar: #f5f5f5;
+  --border-sidebar: #0f172a;
+
+  /* Independent Clock Color */
+  --text-clock: #f5f5f5;
+
+  /*غیر موجه */
+  --color1: #b11f37;
+}
+
+/* ---------------- 3. Fall 1 (Copper & Rust) ---------------- */
+[data-theme="fall-1"] {
+  /*غیر موجه */
+  --color1: #b11f37;
+
+  --bg-primary: #f5eee5;
+  --bg-secondary: #fdf9f4;
+  --bg-tertiary: #e9dbcb;
+  --text-primary: #291508;
+  --text-secondary: #50301b;
+  --text-muted: #7d5c43;
+  --border-color: #d9c0a8;
+  --shadow-tint: #4c2a12;
+
+  --accent-primary: #b4471c;
+  --accent-hover: #8f3615;
+  --accent-light: #fbe6d8;
+  --accent-text: #7d2f11;
+  --accent-border: #e8bfa4;
+  --accent-fg: #ffffff;
+  --on-solid: #ffffff;
+
+  --success: #14705a;
+  --success-soft: #ddefe8;
+  --success-border: #a4d3c4;
+  --success-strong: #0d5041;
+  --warning: #a86d0a;
+  --warning-soft: #f8ecd5;
+  --warning-border: #e2c99a;
+  --warning-strong: #764c07;
+  --danger: #b53a2c;
+  --danger-soft: #f9e4df;
+  --danger-border: #ebb4a8;
+  --danger-strong: #85271c;
+  --info: #6d5399;
+  --info-soft: #eee9f5;
+  --info-border: #cdc0e0;
+  --info-strong: #4d3a6f;
+
+  --bg-header: var(--bg-primary);
+  --text-header: var(--text-primary);
+  --border-header: var(--border-color);
+
+  --bg-sidebar: var(--bg-secondary);
+  --text-sidebar: var(--text-primary);
+  --border-sidebar: var(--border-color);
+  --text-clock: #d97706;
+}
+
+/* ---------------- 4. Fall 2 (Olive & Gold) ---------------- */
+[data-theme="fall-2"] {
+  --bg-primary: #f2efe9;
+  --bg-secondary: #faf8f5;
+  --bg-tertiary: #e2decb;
+  --text-primary: #2f2a1b;
+  --text-secondary: #4a4331;
+  --text-muted: #6e644a;
+  --border-color: #d1c8ab;
+  --shadow-tint: #2f2a1b;
+
+  --accent-primary: #8a7c22;
+  --accent-hover: #6e6219;
+  --accent-light: #f2f0dc;
+  --accent-text: #524a10;
+  --accent-border: #c8c08a;
+  --accent-fg: #ffffff;
+  --on-solid: #ffffff;
+
+  --success: #34633e;
+  --success-soft: #d9e9db;
+  --success-border: #99c2a5;
+  --success-strong: #1a3b22;
+  --warning: #c26e11;
+  --warning-soft: #faebd9;
+  --warning-border: #e8b98b;
+  --warning-strong: #784206;
+  --danger: #9c3328;
+  --danger-soft: #f2dddb;
+  --danger-border: #d99f98;
+  --danger-strong: #591912;
+  --info: #4a6878;
+  --info-soft: #e2ebf0;
+  --info-border: #a8c1cf;
+  --info-strong: #273b45;
+
+  --bg-header: var(--bg-primary);
+  --text-header: var(--text-primary);
+  --border-header: var(--border-color);
+
+  --bg-sidebar: var(--bg-secondary);
+  --text-sidebar: var(--text-primary);
+  --border-sidebar: var(--border-color);
+  --text-clock: #65a30d;
+}
+
+/* ---------------- 5. Spring 1 (Meadow Green) ---------------- */
+[data-theme="spring-1"] {
+  --bg-primary: #eef5ee;
+  --bg-secondary: #fbfdfa;
+  --bg-tertiary: #dcebdb;
+  --text-primary: #12220f;
+  --text-secondary: #2c4429;
+  --text-muted: #587054;
+  --border-color: #bfd7bd;
+  --shadow-tint: #2c4429;
+
+  --accent-primary: #2f7d4f;
+  --accent-hover: #24603d;
+  --accent-light: #dff0e4;
+  --accent-text: #1e5335;
+  --accent-border: #aed4bb;
+  --accent-fg: #ffffff;
+  --on-solid: #ffffff;
+
+  --success: #14795c;
+  --success-soft: #dcf1e7;
+  --success-border: #a5d7c5;
+  --success-strong: #0d5744;
+  --warning: #a97207;
+  --warning-soft: #f8eed6;
+  --warning-border: #e3cd9d;
+  --warning-strong: #7a5105;
+  --danger: #b93f36;
+  --danger-soft: #f8e6e4;
+  --danger-border: #e8b7b2;
+  --danger-strong: #872b24;
+  --info: #4f6fbd;
+  --info-soft: #e6ecf8;
+  --info-border: #bcc9e8;
+  --info-strong: #38508e;
+
+  --bg-header: var(--bg-primary);
+  --text-header: var(--text-primary);
+  --border-header: var(--border-color);
+
+  --bg-sidebar: var(--bg-secondary);
+  --text-sidebar: var(--text-primary);
+  --border-sidebar: var(--border-color);
+  --text-clock: #059669;
+}
+
+/* ---------------- 6. Spring 2 (Lavender & Mint) ---------------- */
+[data-theme="spring-2"] {
+  --bg-primary: #f6f4fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e9e5f2;
+  --text-primary: #2d243b;
+  --text-secondary: #4b3e5e;
+  --text-muted: #74638a;
+  --border-color: #d1c8e3;
+  --shadow-tint: #2d243b;
+
+  --accent-primary: #8561c5;
+  --accent-hover: #6b4ca1;
+  --accent-light: #ebe4f7;
+  --accent-text: #50377a;
+  --accent-border: #c8b5eb;
+  --accent-fg: #ffffff;
+  --on-solid: #ffffff;
+
+  --success: #35a881;
+  --success-soft: #e0f5ee;
+  --success-border: #a8dfcc;
+  --success-strong: #1b634a;
+  --warning: #d99138;
+  --warning-soft: #fdf2e4;
+  --warning-border: #f0cba1;
+  --warning-strong: #8a571c;
+  --danger: #d95f6c;
+  --danger-soft: #faeaec;
+  --danger-border: #edb8bf;
+  --danger-strong: #8c3641;
+  --info: #438bbb;
+  --info-soft: #e5f1f7;
+  --info-border: #abd1e8;
+  --info-strong: #245575;
+
+  --bg-header: var(--bg-primary);
+  --text-header: var(--text-primary);
+  --border-header: var(--border-color);
+
+  --bg-sidebar: var(--bg-secondary);
+  --text-sidebar: var(--text-primary);
+  --border-sidebar: var(--border-color);
+  --text-clock: #8b5cf6;
+}
+
+/* ---------------- 7. Winter 1 (Arctic Sapphire) ---------------- */
+[data-theme="winter-1"] {
+  --bg-primary: #eaf1f7;
+  --bg-secondary: #f9fbfd;
+  --bg-tertiary: #d7e3ef;
+  --text-primary: #0b1926;
+  --text-secondary: #21384c;
+  --text-muted: #4d6780;
+  --border-color: #bccfe0;
+  --shadow-tint: #1b3350;
+
+  --accent-primary: #1a6ea3;
+  --accent-hover: #135381;
+  --accent-light: #dceaf6;
+  --accent-text: #10496f;
+  --accent-border: #a9c9e2;
+  --accent-fg: #ffffff;
+  --on-solid: #ffffff;
+
+  --success: #12735c;
+  --success-soft: #daeee8;
+  --success-border: #a0d1c3;
+  --success-strong: #0b5343;
+  --warning: #a1700f;
+  --warning-soft: #f6edd8;
+  --warning-border: #ddc99f;
+  --warning-strong: #714e08;
+  --danger: #b23f3a;
+  --danger-soft: #f7e6e5;
+  --danger-border: #e6b6b3;
+  --danger-strong: #822a26;
+  --info: #5566bd;
+  --info-soft: #e7eaf8;
+  --info-border: #c1c8e9;
+  --info-strong: #3b4a8e;
+
+  --bg-header: var(--bg-primary);
+  --text-header: var(--text-primary);
+  --border-header: var(--border-color);
+
+  --bg-sidebar: var(--bg-secondary);
+  --text-sidebar: var(--text-primary);
+  --border-sidebar: var(--border-color);
+  --text-clock: #0284c7;
+}
+
+/* ---------------- 8. Winter 2 (Deep Plum & Silver) ---------------- */
+[data-theme="winter-2"] {
+  --bg-primary: #f2f3f7;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e1e3e8;
+  --text-primary: #271d2b;
+  --text-secondary: #4b3d52;
+  --text-muted: #74647d;
+  --border-color: #c9c3ce;
+  --shadow-tint: #271d2b;
+
+  --accent-primary: #6b4c7a;
+  --accent-hover: #533961;
+  --accent-light: #ece7ef;
+  --accent-text: #3c2847;
+  --accent-border: #c4b5cd;
+  --accent-fg: #ffffff;
+  --on-solid: #ffffff;
+
+  --success: #3c8273;
+  --success-soft: #e4f0ed;
+  --success-border: #a8ccc4;
+  --success-strong: #204d43;
+  --warning: #ab7f3d;
+  --warning-soft: #f5efe7;
+  --warning-border: #d4bc97;
+  --warning-strong: #63471c;
+  --danger: #ad4b59;
+  --danger-soft: #f5e6e8;
+  --danger-border: #d6a4ab;
+  --danger-strong: #6b2a34;
+  --info: #4a778c;
+  --info-soft: #e6eff2;
+  --info-border: #adc6d1;
+  --info-strong: #294754;
+
+  --bg-header: var(--bg-primary);
+  --text-header: var(--text-primary);
+  --border-header: var(--border-color);
+
+  --bg-sidebar: var(--bg-secondary);
+  --text-sidebar: var(--text-primary);
+  --border-sidebar: var(--border-color);
+  --text-clock: #6366f1;
+}
+
+/* ---------------- 9. Summer 1 (Sunlit Sand) ---------------- */
+[data-theme="summer-1"] {
+  --bg-primary: #f6f0e2;
+  --bg-secondary: #fffbf2;
+  --bg-tertiary: #ebe0c9;
+  --text-primary: #241708;
+  --text-secondary: #46331e;
+  --text-muted: #736044;
+  --border-color: #dccdaf;
+  --shadow-tint: #4a3618;
+
+  --accent-primary: #c1731a;
+  --accent-hover: #9c5a12;
+  --accent-light: #fbecd4;
+  --accent-text: #85480d;
+  --accent-border: #e6c894;
+  --accent-fg: #ffffff;
+  --on-solid: #ffffff;
+
+  --success: #167a5b;
+  --success-soft: #ddf0e7;
+  --success-border: #a6d6c3;
+  --success-strong: #0e5641;
+  --warning: #b07a10;
+  --warning-soft: #f9eed4;
+  --warning-border: #e5cd98;
+  --warning-strong: #7d550a;
+  --danger: #bd4230;
+  --danger-soft: #fae6e1;
+  --danger-border: #ecb8ac;
+  --danger-strong: #8a2c1f;
+  --info: #6a5ac0;
+  --info-soft: #ece9f8;
+  --info-border: #c8c1ec;
+  --info-strong: #4a3d90;
+
+  --bg-header: var(--bg-primary);
+  --text-header: var(--text-primary);
+  --border-header: var(--border-color);
+
+  --bg-sidebar: var(--bg-secondary);
+  --text-sidebar: var(--text-primary);
+  --border-sidebar: var(--border-color);
+  --text-clock: #ea580c;
+}
+
+/* ---------------- 10. Summer 2 (Ocean Turquoise) ---------------- */
+[data-theme="summer-2"] {
+  --bg-primary: #eff7fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #dceef4;
+  --text-primary: #12303d;
+  --text-secondary: #275266;
+  --text-muted: #517a8c;
+  --border-color: #b5d5e0;
+  --shadow-tint: #12303d;
+
+  --accent-primary: #1e9ebd;
+  --accent-hover: #167a94;
+  --accent-light: #dcf2f7;
+  --accent-text: #105a6e;
+  --accent-border: #92d4e3;
+  --accent-fg: #ffffff;
+  --on-solid: #ffffff;
+
+  --success: #35a878;
+  --success-soft: #e2f5ee;
+  --success-border: #a1dec6;
+  --success-strong: #1b6345;
+  --warning: #e09f3e;
+  --warning-soft: #fbf2e3;
+  --warning-border: #f2ce9c;
+  --warning-strong: #8f601b;
+  --danger: #d45959;
+  --danger-soft: #fcebeb;
+  --danger-border: #efaeae;
+  --danger-strong: #8a3232;
+  --info: #5575c4;
+  --info-soft: #e8ecf7;
+  --info-border: #b3c2e8;
+  --info-strong: #334a85;
+
+  --bg-header: var(--bg-primary);
+  --text-header: var(--text-primary);
+  --border-header: var(--border-color);
+
+  --bg-sidebar: var(--bg-secondary);
+  --text-sidebar: var(--text-primary);
+  --border-sidebar: var(--border-color);
+  --text-clock: #0891b2;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--border-color);
+    font-family: "Vazirmatn", sans-serif !important;
+  }
+  html,
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 19px;
+    line-height: 1.65;
+    letter-spacing: -0.01em;
+    font-feature-settings: "tnum";
+    font-family: "Vazirmatn", sans-serif !important;
+  }
+  input,
+  button,
+  select,
+  textarea,
+  optgroup {
+    font-family: "Vazirmatn", sans-serif !important;
+  }
+  code,
+  kbd,
+  samp,
+  pre,
+  .font-mono {
+    font-family: "Vazirmatn", sans-serif !important;
+    font-variant-numeric: tabular-nums;
+  }
+  ::selection {
+    background-color: color-mix(
+      in srgb,
+      var(--accent-primary) 28%,
+      transparent
+    );
+  }
+}
+
+/* Attendance status tags — one shared vocabulary across every tab */
+.tag-present,
+.tag-excused,
+.tag-cancelled,
+.tag-noshow {
+  font-weight: 700;
+  border-width: 1px;
+  border-style: solid;
+}
+.tag-present {
+  background-color: var(--success-soft);
+  color: var(--success-strong);
+  border-color: var(--success-border);
+}
+.tag-excused {
+  background-color: var(--warning-soft);
+  color: var(--warning-strong);
+  border-color: var(--warning-border);
+}
+.tag-cancelled {
+  background-color: var(--info-soft);
+  color: var(--info-strong);
+  border-color: var(--info-border);
+}
+.tag-noshow {
+  background-color: var(--danger-soft);
+  color: var(--danger-strong);
+  border-color: var(--danger-border);
+}
+
+@utility card-surface {
+  background: linear-gradient(
+    170deg,
+    var(--bg-secondary) 0%,
+    color-mix(in srgb, var(--bg-secondary) 70%, var(--bg-tertiary) 30%) 100%
+  );
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-app);
+  box-shadow: var(--shadow-card);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--text-muted) 45%, transparent);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--text-muted) 70%, transparent);
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
+
+@layer utilities {
+  /* Replace solid backgrounds with subtle gradients */
+  .bg-\[var\(--bg-secondary\)\] {
+    background: linear-gradient(
+      170deg,
+      var(--bg-secondary) 0%,
+      color-mix(in srgb, var(--bg-secondary) 70%, var(--bg-tertiary) 30%) 100%
+    ) !important;
+  }
+  .bg-\[var\(--bg-tertiary\)\] {
+    background: linear-gradient(
+      170deg,
+      var(--bg-tertiary) 0%,
+      var(--bg-secondary) 100%
+    ) !important;
+  }
+  .bg-accent {
+    background: linear-gradient(
+      135deg,
+      var(--accent-primary) 0%,
+      var(--accent-hover) 100%
+    ) !important;
+  }
+  .bg-success {
+    background: linear-gradient(
+      135deg,
+      var(--success) 0%,
+      var(--success-strong) 100%
+    ) !important;
+  }
+  .bg-danger {
+    background: linear-gradient(
+      135deg,
+      var(--danger) 0%,
+      var(--danger-strong) 100%
+    ) !important;
+  }
+  .bg-warning {
+    background: linear-gradient(
+      135deg,
+      var(--warning) 0%,
+      var(--warning-strong) 100%
+    ) !important;
+  }
+  .bg-info {
+    background: linear-gradient(
+      135deg,
+      var(--info) 0%,
+      var(--info-strong) 100%
+    ) !important;
+  }
+
+  /* Clock Loading Screen Animations & Typography */
+  .font-clock {
+    font-family: "Outfit", "Space Grotesk", system-ui, -apple-system, sans-serif !important;
+  }
+}
+
+@keyframes clockColonBlink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px var(--accent-primary, #38bdf8));
+  }
+  50% {
+    opacity: 0.15;
+    transform: scale(0.92);
+    filter: drop-shadow(0 0 1px transparent);
+  }
+}
+
+.animate-clock-blink {
+  animation: clockColonBlink 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Logo Motion Stroke-Draw & Fill Animation */
+@keyframes androidStrokeMotion {
+  0% {
+    stroke-dashoffset: 420;
+    fill-opacity: 0;
+  }
+  45% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  75%, 100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+
+.animate-android-stroke-fill {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: androidStrokeMotion 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Option 3 + 4: Integrated Ambient Aura & Exit Pulse */
+@keyframes ambientBreathingAura {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.32;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.52;
+  }
+}
+
+.animate-ambient-aura {
+  animation: ambientBreathingAura 6s ease-in-out infinite;
+}
+
