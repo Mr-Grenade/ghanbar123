@@ -582,7 +582,6 @@ export const TeachersManager: React.FC = () => {
                       type="text"
                       value={formName}
                       onChange={(e) => setFormName(e.target.value)}
-                      placeholder="مثال: استاد علیرضا محمودی"
                       className="w-full px-3 py-2 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] text-[var(--text-primary)] text-xs focus:ring-1 focus:ring-accent"
                       required
                     />
@@ -670,7 +669,6 @@ export const TeachersManager: React.FC = () => {
                             <div className="flex-1 flex flex-col gap-0.5">
                               <input
                                 type="tel"
-                                placeholder="09121234567"
                                 value={phone.number}
                                 onChange={(e) => {
                                   const val = toEnglishDigits(e.target.value)
@@ -737,7 +735,6 @@ export const TeachersManager: React.FC = () => {
                     <textarea
                       value={formNotes}
                       onChange={(e) => setFormNotes(e.target.value)}
-                      placeholder="رزومه تحصیلی، سوابق نوازندگی، تجارب تدریس..."
                       className="flex-1 min-h-[75px] w-full px-3 py-2 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] text-[var(--text-primary)] text-xs resize-none"
                     ></textarea>
                   </div>

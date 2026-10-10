@@ -231,7 +231,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
               </div>
               <div>
                 <h3 className="text-base md:text-lg font-bold text-[var(--text-primary)]">
-                  لیست کارها (To Do)
+                  لیست کارها
                 </h3>
                 <p className="text-xs text-[var(--text-muted)] mt-0.5">
                   {totalTodosCount === 0 ? (
@@ -280,7 +280,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
               value={newTodoTitle}
               onChange={(e) => setNewTodoTitle(e.target.value)}
               onKeyDown={handleTodoKeyDown}
-              placeholder="کار جدیدی برای انجام یا پیگیری بنویسید... (Enter برای ثبت، Shift+Enter خط بعد)"
+              placeholder="کار جدید..."
               className="w-full bg-transparent border-0 text-[var(--text-primary)] text-xs sm:text-sm placeholder:text-[var(--text-muted)] focus:outline-hidden resize-none leading-relaxed min-h-[46px]"
               rows={2}
               required
@@ -573,20 +573,19 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
             <form onSubmit={handleSaveNote} className="space-y-3.5 text-xs">
               <div>
                 <label className="block font-bold text-[var(--text-primary)] mb-1">
-                  عنوان یادداشت <span className="text-[var(--text-muted)] font-normal">(اختیاری):</span>
+                  عنوان یادداشت <span className="text-[var(--text-muted)] font-normal">:</span>
                 </label>
                 <input
                   type="text"
                   value={newNoteTitle}
                   onChange={(e) => setNewNoteTitle(e.target.value)}
-                  placeholder="اختیاری - در صورت تمایل عنوان را وارد کنید"
                   className="w-full px-3 py-2.5 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-color)] text-[var(--text-primary)] text-xs"
                 />
               </div>
 
               <div>
                 <label className="block font-bold text-[var(--text-primary)] mb-1">
-                  متن کامل یادداشت:
+                  متن یادداشت:
                 </label>
                 <textarea
                   value={newNoteContent}
@@ -598,7 +597,6 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                     }
                   }}
                   rows={4}
-                  placeholder="شرح توضیحات، یادآوری یا اطلاعیه... (Enter برای ثبت، Shift+Enter خط بعد)"
                   className="w-full px-3 py-2.5 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-color)] text-[var(--text-primary)] text-xs leading-relaxed focus:outline-hidden focus:ring-1 focus:ring-accent"
                   required
                 />

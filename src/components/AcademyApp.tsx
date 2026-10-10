@@ -119,19 +119,6 @@ const MainAppContent: React.FC = () => {
         </main>
       </div>
 
-      {/* Floating button to preview loading screen or manually activate screensaver */}
-      {!showInitialLoader && !isScreensaverActive && (
-        <button
-          type="button"
-          onClick={() => setIsScreensaverActive(true)}
-          className="fixed bottom-4 left-4 z-[9000] px-3 py-1.5 rounded-full bg-[var(--card-bg)]/90 hover:bg-[var(--card-bg)] backdrop-blur-md border border-[var(--border-primary)] shadow-lg text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all cursor-pointer flex items-center gap-1.5"
-          title="فعال‌سازی دستی محافظ صفحه نمایش (اسکرین‌سیور)"
-        >
-          <span className="w-2 h-2 rounded-full bg-[var(--accent-primary)] animate-pulse" />
-          <span>محافظ صفحه (اسکرین‌سیور)</span>
-        </button>
-      )}
-
       {/* Floating System Toast Notification */}
       {toastMessage && (
         <div

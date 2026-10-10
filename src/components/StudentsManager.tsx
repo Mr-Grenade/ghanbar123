@@ -1289,7 +1289,6 @@ export const StudentsManager: React.FC = () => {
                       onBlur={() =>
                         setTimeout(() => setShowNameSuggestions(false), 200)
                       }
-                      placeholder="مثال: علی رضایی"
                       className="w-full px-3 py-2 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-color)] text-[var(--text-primary)]"
                       required
                     />
@@ -1352,14 +1351,13 @@ export const StudentsManager: React.FC = () => {
                   {/* English Name */}
                   <div className="col-span-2 md:col-span-1">
                     <label className="block font-semibold text-[var(--text-primary)] mb-1">
-                      نام انگلیسی (برای گواهی):
+                      نام انگلیسی:
                     </label>
                     <input
                       type="text"
                       dir="ltr"
                       value={formEnglishName}
                       onChange={(e) => setFormEnglishName(e.target.value)}
-                      placeholder="e.g. Ali Rezaei"
                       className="w-full px-3 py-2 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-color)] text-[var(--text-primary)] font-mono text-left"
                     />
                   </div>
@@ -1379,7 +1377,6 @@ export const StudentsManager: React.FC = () => {
                             .slice(0, 10);
                           setFormNationalId(val);
                         }}
-                        placeholder="۱۰ رقم (فقط اعداد)"
                         className={`w-full px-3 py-2 rounded-xl bg-[var(--bg-tertiary)] border text-[var(--text-primary)] font-mono transition-colors ${formNationalId.length > 0 && formNationalId.length !== 10 ? "border-danger focus:ring-danger" : "border-[var(--border-color)]"}`}
                         maxLength={10}
                         required
@@ -1528,7 +1525,6 @@ export const StudentsManager: React.FC = () => {
                         <div key={index} className="flex items-start gap-2">
                           <input
                             type="text"
-                            placeholder="عنوان (مثال: موبایل مادر)"
                             dir="auto"
                             value={phone.title}
                             onChange={(e) => {
@@ -1848,7 +1844,6 @@ export const StudentsManager: React.FC = () => {
                       dir="auto"
                       value={formNotes}
                       onChange={(e) => setFormNotes(e.target.value)}
-                      placeholder="سطح، کتاب‌های در دست تدریس، متد و توضیحات تکمیلی..."
                       rows={3}
                       className="w-full px-3 py-2 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-color)] text-[var(--text-primary)]"
                     ></textarea>

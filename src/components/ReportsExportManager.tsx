@@ -548,24 +548,22 @@ export const ReportsExportManager: React.FC = () => {
                   <button
                     key={t.value}
                     type="button"
+                    title={t.label}
                     onClick={() => setTheme(t.value as any)}
-                    className={`p-3 rounded-2xl border text-right transition-all cursor-pointer relative group ${
+                    className={`p-2.5 rounded-2xl border transition-all cursor-pointer relative group flex items-center justify-center ${
                       isSelected
                         ? "border-accent shadow-md ring-2 ring-accent/30 bg-[var(--bg-tertiary)]"
                         : "border-[var(--border-color)] hover:border-accent/40 bg-[var(--bg-secondary)]"
                     }`}
                   >
                     <div
-                      className={`w-full h-10 rounded-xl bg-gradient-to-br ${t.colors} border border-[var(--border-color)] shadow-2xs mb-2.5 flex items-center justify-center`}
+                      className={`w-full h-10 rounded-xl bg-gradient-to-br ${t.colors} border border-[var(--border-color)] shadow-2xs flex items-center justify-center`}
                     >
                       {isSelected && (
                         <div className="w-5 h-5 rounded-full bg-accent text-on-solid flex items-center justify-center shadow-xs">
                           <Check className="w-3 h-3 stroke-[3]" />
                         </div>
                       )}
-                    </div>
-                    <div className="text-xs font-bold text-[var(--text-primary)]">
-                      {t.label}
                     </div>
                   </button>
                 );
